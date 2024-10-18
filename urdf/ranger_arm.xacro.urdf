@@ -81,7 +81,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="1.57 0 3.14 " xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/ranger_mini_v2/ranger_base.dae"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/ranger_mini_v2/ranger_base.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -100,7 +100,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="1.57 0 3.14 " xyz="-0.23 -0.194 0.1"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/ranger_mini_v2/fl.dae"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/ranger_mini_v2/fl.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -156,7 +156,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="1.57 0 3.14 " xyz="-0.23 0.194 0.1"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/ranger_mini_v2/fr.dae"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/ranger_mini_v2/fr.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -212,7 +212,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="1.57 0 3.14 " xyz="-0.23 -0.194 0.1"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/ranger_mini_v2/fl.dae"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/ranger_mini_v2/fl.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -268,7 +268,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="1.57 0 3.14 " xyz="-0.23 0.194 0.1"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/ranger_mini_v2/fr.dae"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/ranger_mini_v2/fr.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -409,7 +409,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/ranger_mini_v2/base_add_on.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/ranger_mini_v2/base_add_on.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
@@ -418,7 +418,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/ranger_mini_v2/base_add_on.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/ranger_mini_v2/base_add_on.STL"/>
       </geometry>
     </collision>
   </link>
@@ -633,7 +633,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link0.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link0.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
@@ -642,7 +642,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link0.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link0.STL"/>
       </geometry>
     </collision>
   </link>
@@ -655,7 +655,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link1.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link1.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.59804 0.91765 0.92941 1"/>
@@ -664,7 +664,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link1.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link1.STL"/>
       </geometry>
     </collision>
   </link>
@@ -684,7 +684,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link2.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link2.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
@@ -693,7 +693,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link2.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link2.STL"/>
       </geometry>
     </collision>
   </link>
@@ -713,7 +713,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link3.STL" scale="1 1 1"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link3.STL" scale="1 1 1"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
@@ -742,7 +742,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link4.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link4.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.89804 0.91765 0.92941 1"/>
@@ -751,7 +751,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link4.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link4.STL"/>
       </geometry>
     </collision>
   </link>
@@ -771,7 +771,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link5.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link5.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.59216 0.81961 0.93333 1"/>
@@ -780,7 +780,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link5.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link5.STL"/>
       </geometry>
     </collision>
   </link>
@@ -800,7 +800,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link6.STL" scale="1 1 1"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link6.STL" scale="1 1 1"/>
       </geometry>
       <material name="">
         <color rgba="0.89804 0.61765 0.92941 1"/>
@@ -829,7 +829,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link7.STL" scale="1 1 1"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link7.STL" scale="1 1 1"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
@@ -858,14 +858,14 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/quick_release.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/quick_release.STL"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/quick_release.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/quick_release.STL"/>
       </geometry>
     </collision>
   </link>
@@ -913,7 +913,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link0.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link0.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
@@ -922,7 +922,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link0.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link0.STL"/>
       </geometry>
     </collision>
   </link>
@@ -935,7 +935,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link1.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link1.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.59804 0.91765 0.92941 1"/>
@@ -944,7 +944,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link1.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link1.STL"/>
       </geometry>
     </collision>
   </link>
@@ -964,7 +964,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link2.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link2.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
@@ -973,7 +973,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link2.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link2.STL"/>
       </geometry>
     </collision>
   </link>
@@ -993,7 +993,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link3.STL" scale="-1 1 1"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link3.STL" scale="-1 1 1"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
@@ -1022,7 +1022,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link4.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link4.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.89804 0.91765 0.92941 1"/>
@@ -1031,7 +1031,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link4.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link4.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1051,7 +1051,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link5.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link5.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.59216 0.81961 0.93333 1"/>
@@ -1060,7 +1060,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link5.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link5.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1080,7 +1080,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link6.STL" scale="-1 1 1"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link6.STL" scale="-1 1 1"/>
       </geometry>
       <material name="">
         <color rgba="0.89804 0.61765 0.92941 1"/>
@@ -1109,7 +1109,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/link7.STL" scale="1 -1 1"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/link7.STL" scale="1 -1 1"/>
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1"/>
@@ -1138,14 +1138,14 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/quick_release.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/quick_release.STL"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/arm/quick_release.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/arm/quick_release.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1193,7 +1193,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/gripper_base.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/gripper_base.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>
@@ -1202,7 +1202,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/gripper_base.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/gripper_base.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1215,7 +1215,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/finger1.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/finger1.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1224,7 +1224,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/finger1.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/finger1.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1244,7 +1244,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/finger2.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/finger2.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1253,7 +1253,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/finger2.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/finger2.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1279,7 +1279,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/gripper_base.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/gripper_base.STL"/>
       </geometry>
       <material name="">
         <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>
@@ -1288,7 +1288,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/gripper_base.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/gripper_base.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1301,7 +1301,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/finger1.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/finger1.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1310,7 +1310,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/finger1.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/finger1.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1330,7 +1330,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/finger2.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/finger2.STL"/>
       </geometry>
       <material name="">
         <color rgba="1 1 1 1"/>
@@ -1339,7 +1339,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/ccs/ros2/teleop_ws/install/libertech_ranger_arm_description/share/libertech_ranger_arm_description/meshes/gripper/finger2.STL"/>
+        <mesh filename="file://$(find libertech_ranger_arm_description)/meshes/gripper/finger2.STL"/>
       </geometry>
     </collision>
   </link>
