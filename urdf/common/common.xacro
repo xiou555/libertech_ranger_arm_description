@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+	xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<!-- Full Link with Inertial, Visual, and Collision -->
+	<!-- Note: This macro assumes that the geometry, physical parameters, and coordinate frame origins of the mesh files are perfectly aligned. -->
+	<xacro:macro name="link_with_inertial_visual_collision" params="name mass ixx ixy ixz iyy iyz izz mesh_visual mesh_collision material scale:='1 1 1'
+    *origin_inertial *origin_visual *origin_collision">
+		<link name="${name}">
+			<inertial>
+				<xacro:insert_block name="origin_inertial"/>
+				<mass value="${mass}" />
+				<inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}" />
+			</inertial>
+			<visual>
+				<xacro:insert_block name="origin_visual"/>
+				<geometry>
+					<mesh filename="${mesh_visual}" scale="${scale}"/>
+				</geometry>
+				<material name="${material}" />
+			</visual>
+			<collision>
+				<xacro:insert_block name="origin_collision"/>
+				<geometry>
+					<mesh filename="${mesh_collision}" scale="${scale}" />
+				</geometry>
+			</collision>
+		</link>
+	</xacro:macro>
+	<!-- Link with only Inertial and Visual -->
+	<!-- Note: This macro assumes that the geometry, physical parameters, and coordinate frame origins of the mesh files are perfectly aligned. -->
+	<xacro:macro name="link_with_inertial_visual" params="name mass ixx ixy ixz iyy iyz izz mesh_visual material
+    *origin_inertial *origin_visual">
+		<link name="${name}">
+			<inertial>
+				<xacro:insert_block name="origin_inertial"/>
+				<mass value="${mass}" />
+				<inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}" />
+			</inertial>
+			<visual>
+				<xacro:insert_block name="origin_visual"/>
+				<geometry>
+					<mesh filename="${mesh_visual}" scale="${scale}" />
+				</geometry>
+				<material name="${material}" />
+			</visual>
+		</link>
+	</xacro:macro>
+	<!-- Link with only Visual -->
+	<!-- Note: This macro assumes that the geometry, physical parameters, and coordinate frame origins of the mesh files are perfectly aligned. -->
+	<xacro:macro name="link_with_visual" params="name mesh_visual material
+    *origin_visual">
+		<link name="${name}">
+			<visual>
+				<xacro:insert_block name="origin_visual"/>
+				<geometry>
+					<mesh filename="${mesh_visual}"  scale="${scale}"/>
+				</geometry>
+				<material name="${material}" />
+			</visual>
+		</link>
+	</xacro:macro>
+	<!-- Prismatic Joint -->
+	<xacro:macro name="prismatic_joint" params="name parent child axis lower upper velocity effort damping friction *origin">
+		<joint name="${name}" type="prismatic">
+			<xacro:insert_block name="origin"/>
+			<parent link="${parent}" />
+			<child link="${child}" />
+			<axis xyz="${axis}" />
+			<limit lower="${lower}" upper="${upper}" velocity="${velocity}" effort="${effort}" />
+			<dynamics damping="${damping}" friction="${friction}" />
+		</joint>
+	</xacro:macro>
+	<!-- Revolute Joint -->
+	<xacro:macro name="revolute_joint" params="name parent child axis lower upper velocity effort damping friction *origin">
+		<joint name="${name}" type="revolute">
+			<xacro:insert_block name="origin"/>
+			<parent link="${parent}" />
+			<child link="${child}" />
+			<axis xyz="${axis}" />
+			<limit lower="${lower}" upper="${upper}" velocity="${velocity}" effort="${effort}" />
+			<dynamics damping="${damping}" friction="${friction}" />
+		</joint>
+	</xacro:macro>
+	<!-- Fixed Joint -->
+	<xacro:macro name="fixed_joint" params="name parent child *origin">
+		<joint name="${name}" type="fixed">
+			<xacro:insert_block name="origin"/>
+			<parent link="${parent}" />
+			<child link="${child}" />
+		</joint>
+	</xacro:macro>
+</robot>

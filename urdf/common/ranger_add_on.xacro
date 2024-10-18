@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find libertech_ranger_arm_description)/urdf/common/gazebo.xacro"/>
+
+    <link name="base_add_on">
+        <inertial>
+            <origin xyz="0.0455338389926168 -0.00103634765767435 0.220800927413883" rpy="0 0 0" />
+            <mass value="6.44138353782306" />
+            <inertia ixx="0.0992945121069776" ixy="5.84470364161191E-05" ixz="-4.71376239762533E-07" iyy="0.124094455743998" iyz="1.23371057479671E-08" izz="0.13752951719075" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="${mesh_visual_path}/ranger_mini_v2/base_add_on.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="${mesh_visual_path}/ranger_mini_v2/base_add_on.STL" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="base_joint" type="fixed">
+        <origin xyz="0.015 0.0 0.024" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="base_add_on"/>
+    </joint>
+
+    <link name="lidar_link"/>
+    <joint name="lidar_joint" type="fixed">
+        <parent link="base_add_on"/>
+        <child link="lidar_link"/>
+        <origin xyz="0.23523 0 0.6" rpy="0 0 0"/>
+    </joint>
+    <!-- 实际正放在上 -->
+    <!-- 期望前置 -->
+
+    <link name="imu_link">
+        <inertial>
+            <mass value="0.01"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+        </inertial>
+        <!-- <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.015 0.015 0.004"/>
+            </geometry>
+        </visual> -->
+    </link>
+    <joint name="imu_joint" type="fixed">
+        <origin xyz="0.0 0 0.0" rpy="0 0 0" />
+        <parent link="lidar_link"/>
+        <child link="imu_link"/>
+    </joint>
+
+    <link name="camera_link"/>
+    <joint name="camera_joint" type="fixed">
+        <parent link="base_add_on"/>
+        <child link="camera_link"/>
+        <origin xyz="0.34 0 0.55" rpy="0 0 0"/>
+    </joint>
+
+    <link name="camera_optical_frame"/>
+    <joint name="camera_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-${pi/2} 0.0 -${pi/2}"/>
+        <parent link="camera_link"/>
+        <child link="camera_optical_frame"/>
+    </joint>
+
+    <xacro:gazebo_sensor_imu link_name="imu_link" joint_name="imu_joint"/>
+    <xacro:gazebo_sensor_rplidar link_name="lidar_link"/>
+    <xacro:gazebo_sensor_camera link_name="camera_link"/>
+
+</robot>
+
+

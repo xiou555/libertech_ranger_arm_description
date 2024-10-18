@@ -1,0 +1,203 @@
+<?xml version="1.0" ?>
+<robot name="zinger"
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!--
+        GAZEBO MACROS
+    -->
+    <!--
+        Define Gazebo specific macro's here because this file isn't included if we're not running
+        Gazebo
+    -->
+    <xacro:macro name="gazebo_link" params="link_name">
+        <gazebo reference="${link_name}">
+            <collision>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>0.1</mu>
+                            <mu2>0.1</mu2>
+                        </ode>
+                    </friction>
+                    <contact>
+                        <ode>
+                            <kp>50000.0</kp>
+                            <kd>10.0</kd>
+                        </ode>
+                    </contact>
+                </surface>
+            </collision>
+
+            <!-- <minDepth>0.001</minDepth>
+            <maxVel>0.1</maxVel>
+            <fdir1>1 0 0</fdir1> -->
+
+        </gazebo>
+    </xacro:macro>
+
+    <!-- Sensors -->
+
+    <xacro:macro name="gazebo_sensor_imu" params="link_name joint_name update_rate:=100">
+        <gazebo reference="${link_name}">
+            <sensor name="${link_name}_imu" type="imu">
+                <visualize>true</visualize>
+                <topic>imu</topic>
+                <ignition_frame_id>${link_name}</ignition_frame_id>
+                <always_on>true</always_on>
+                <update_rate>${update_rate}</update_rate>
+                <imu>
+                    <angular_velocity>
+                        <x>
+                            <noise type="gaussian">
+                                <mean>0.0</mean>
+                                <stddev>0.0</stddev>
+                            </noise>
+                        </x>
+                        <y>
+                            <noise type="gaussian">
+                                <mean>0.0</mean>
+                                <stddev>0.0</stddev>
+                            </noise>
+                        </y>
+                        <z>
+                            <noise type="gaussian">
+                                <mean>0.0</mean>
+                                <stddev>0.0</stddev>
+                            </noise>
+                        </z>
+                    </angular_velocity>
+                    <linear_acceleration>
+                        <x>
+                            <noise type="gaussian">
+                                <mean>0.0</mean>
+                                <stddev>0.0</stddev>
+                            </noise>
+                        </x>
+                        <y>
+                            <noise type="gaussian">
+                                <mean>0.0</mean>
+                                <stddev>0.0</stddev>
+                            </noise>
+                        </y>
+                        <z>
+                            <noise type="gaussian">
+                                <mean>0.0</mean>
+                                <stddev>0.0</stddev>
+                            </noise>
+                        </z>
+                    </linear_acceleration>
+                </imu>
+            </sensor>
+        </gazebo>
+
+        <gazebo reference="${joint_name}">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+        </gazebo>
+    </xacro:macro>
+
+    <xacro:macro name="gazebo_sensor_rplidar" params="link_name">
+        <gazebo reference="${link_name}">
+            <sensor name="${link_name}_lidar" type="gpu_lidar">
+                <!--
+                    Move the sensor up slightly from the bottom of the lidar unit.
+                -->
+                <pose>0 0 0.03 0 0 0</pose>
+                <alwaysOn>true</alwaysOn>
+                <topic>scan</topic>
+                <update_rate>10</update_rate>
+                <visualize>true</visualize>
+                <ignition_frame_id>${link_name}</ignition_frame_id>
+                <ray>
+                    <scan>
+                        <horizontal>
+                            <samples>640</samples>
+                            <resolution>1.0</resolution>
+                            <min_angle>0</min_angle>
+                            <max_angle>6.28</max_angle>
+                        </horizontal>
+                        <vertical>
+                            <samples>1</samples>
+                            <resolution>1</resolution>
+                            <min_angle>0</min_angle>
+                            <max_angle>0</max_angle>
+                        </vertical>
+                    </scan>
+                    <range>
+                        <min>0.164</min>
+                        <max>12.0</max>
+                        <resolution>0.01</resolution>
+                    </range>
+                </ray>
+            </sensor>
+        </gazebo>
+    </xacro:macro>
+
+    <xacro:macro name="gazebo_sensor_camera" params="link_name">
+        <gazebo reference="${link_name}">
+            <sensor name="${link_name}_camera" type="rgbd_camera">
+                <camera>
+                    <horizontal_fov>1.047</horizontal_fov>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>                        <!-- RGB_INT8 -->
+
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>20</far>
+                    </clip>
+                    <distortion>
+                        <k1>0.0</k1>
+                        <k2>0.0</k2>
+                        <k3>0.0</k3>
+                        <p1>0.0</p1>
+                        <p2>0.0</p2>
+                        <center>0.5 0.5</center>
+                    </distortion>
+                    <lens>
+                        <intrinsics>
+                            <fx>554.25469</fx>                            <!-- fx = fy = width / ( 2 * tan (hfov / 2 ) ) -->
+                            <fy>554.25469</fy>
+                            <cx>320.5</cx>                            <!-- cx = ( width + 1 ) / 2 -->
+                            <cy>240.5</cy>                            <!-- cy = ( height + 1 ) / 2 -->
+                            <s>0</s>
+                        </intrinsics>
+                        <!-- These need to match the intrinsics above or
+                            Ignition will default to different default values -->
+                        <projection>
+                            <p_fx>554.25469</p_fx>
+                            <p_fy>554.25469</p_fy>
+                            <p_cx>320.5</p_cx>
+                            <p_cy>240.5</p_cy>
+                            <tx>0</tx>
+                            <ty>0</ty>
+                        </projection>
+                    </lens>
+                    <!-- <noise>
+                        <type>gaussian</type>
+                        <mean>0</mean>
+                        <stddev>0.07</stddev>
+                    </noise> -->
+                    <depth_camera>
+                        <clip>
+                            <near>0.25</near>
+                            <far>5</far>
+                        </clip>
+                    </depth_camera>
+                    <!-- <optical_frame_id>${link_name}_optical_frame</optical_frame_id> -->
+                </camera>
+                <ignition_frame_id>${link_name}</ignition_frame_id>
+                <always_on>true</always_on>
+                <update_rate>30</update_rate>
+                <!-- <visualize>true</visualize> -->
+                <topic>camera</topic>
+                <enable_metrics>false</enable_metrics>
+
+
+            </sensor>
+        </gazebo>
+    </xacro:macro>
+
+</robot>

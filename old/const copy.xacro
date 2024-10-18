@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="liberman">
+
+    <!-- Constants for robot dimensions -->
+    <xacro:property name="PI" value="3.1415926535897931"/>
+
+    <!-- ********************************* -->
+    <!-- 尽管有些关节可以到180或90度，但拟人化处理 -->
+    <xacro:property name="J1_min" value="${-150*PI/180}"/>  
+    <xacro:property name="J1_max" value="${150*PI/180}"/>
+    <xacro:property name="J1_velocity_max" value="${200*2*PI/60}"/>
+    <xacro:property name="J1_torque_max" value="45.0"/>
+
+    <xacro:property name="J2_min" value="${-PI/2}"/>
+    <xacro:property name="J2_max" value="${PI/180}"/>
+    <xacro:property name="J2_velocity_max" value="${200*2*PI/60}"/>
+    <xacro:property name="J2_torque_max" value="45.0"/>
+
+    <xacro:property name="J3_min" value="${-150*PI/180}"/>
+    <xacro:property name="J3_max" value="${150*PI/180}"/>
+    <xacro:property name="J3_velocity_max" value="${200*2*PI/60}"/>
+    <xacro:property name="J3_torque_max" value="45.0"/>
+
+    <xacro:property name="J4_min" value="${-100*PI/180}"/>
+    <xacro:property name="J4_max" value="${100*PI/180}"/>
+    <xacro:property name="J4_velocity_max" value="${200*2*PI/60}"/>
+    <xacro:property name="J4_torque_max" value="45.0"/>
+
+    <xacro:property name="J5_min" value="${-120*PI/180}"/>
+    <xacro:property name="J5_max" value="${120*PI/180}"/>
+    <xacro:property name="J5_velocity_max" value="${200*2*PI/60}"/>
+    <xacro:property name="J5_torque_max" value="45.0"/>
+
+    <xacro:property name="J6_min" value="${-55*PI/180}"/>
+    <xacro:property name="J6_max" value="${55*PI/180}"/>
+    <xacro:property name="J6_velocity_max" value="${200*2*PI/60}"/>
+    <xacro:property name="J6_torque_max" value="45.0"/>
+
+    <xacro:property name="J7_min" value="${-75*PI/180}"/>
+    <xacro:property name="J7_max" value="${75*PI/180}"/>
+    <xacro:property name="J7_velocity_max" value="6.28"/>
+    <xacro:property name="J7_torque_max" value="45.0"/>
+
+    <!-- joint limits -->
+    <xacro:property name="joint_damping" value="0.1"/>
+    <xacro:property name="joint_friction" value="0.1"/>
+
+</robot>

@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="arm_ros2_control_joint" params="
+    prefix
+    name
+    initial_positions:=${dict(shoulder_pitch_joint=0.0,
+                              shoulder_roll_joint=0.0,
+                              shoulder_yaw_joint=0.0,
+                              elbow_pitch_joint=0.0,
+                              elbow_roll_joint=0.0,
+                              wrist_pitch_joint=0.0,
+                              wrist_yaw_joint=0.0)}" >
+
+    <joint name="${prefix}${name}_shoulder_pitch_joint">
+      <command_interface name="position">
+        <param name="min">${arm_joint1_PositionMin}</param>
+        <param name="max">${arm_joint1_PositionMax}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-${arm_velocityMax}</param>
+        <param name="max">${arm_velocityMax}</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">${initial_positions['shoulder_pitch_joint']}</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="${prefix}${name}_shoulder_roll_joint">
+      <command_interface name="position">
+        <param name="min">${arm_joint2_PositionMin}</param>
+        <param name="max">${arm_joint2_PositionMax}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-${arm_velocityMax}</param>
+        <param name="max">${arm_velocityMax}</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">${initial_positions['shoulder_roll_joint']}</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="${prefix}${name}_shoulder_yaw_joint">
+      <command_interface name="position">
+        <param name="min">${arm_joint3_PositionMin}</param>
+        <param name="max">${arm_joint3_PositionMax}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-${arm_velocityMax}</param>
+        <param name="max">${arm_velocityMax}</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">${initial_positions['shoulder_yaw_joint']}</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="${prefix}${name}_elbow_pitch_joint">
+      <command_interface name="position">
+        <param name="min">${arm_joint4_PositionMin}</param>
+        <param name="max">${arm_joint4_PositionMax}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-${arm_velocityMax}</param>
+        <param name="max">${arm_velocityMax}</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">${initial_positions['elbow_pitch_joint']}</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="${prefix}${name}_elbow_roll_joint">
+      <command_interface name="position">
+        <param name="min">${arm_joint5_PositionMin}</param>
+        <param name="max">${arm_joint5_PositionMax}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-${arm_velocityMax}</param>
+        <param name="max">${arm_velocityMax}</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">${initial_positions['elbow_roll_joint']}</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="${prefix}${name}_wrist_pitch_joint">
+      <command_interface name="position">
+        <param name="min">${arm_joint6_PositionMin}</param>
+        <param name="max">${arm_joint6_PositionMax}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-${arm_velocityMax}</param>
+        <param name="max">${arm_velocityMax}</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">${initial_positions['wrist_pitch_joint']}</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="${prefix}${name}_wrist_yaw_joint">
+      <command_interface name="position">
+        <param name="min">${arm_joint7_PositionMin}</param>
+        <param name="max">${arm_joint7_PositionMax}</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-${arm_velocityMax}</param>
+        <param name="max">${arm_velocityMax}</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">${initial_positions['wrist_yaw_joint']}</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+  </xacro:macro>
+
+
+  <xacro:macro name="wheel_ros2_control_joint" params="
+    prefix " >
+    <joint name="front_left_wheel_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="front_right_wheel_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="rear_left_wheel_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="rear_right_wheel_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="front_left_wheel_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="front_right_wheel_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="rear_left_wheel_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="rear_right_wheel_steering_joint">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+
+  </xacro:macro>
+
+
+  <xacro:macro name="ranger_arm_ros2_control" params="
+    prefix
+    use_fake_hardware:=false
+    sim_ignition:=false " >
+
+    <ros2_control name="${prefix}MultiInterfaceHardware" type="system">
+      <hardware>
+        <xacro:if value="${sim_ignition}">
+          <plugin>ign_ros2_control/IgnitionSystem</plugin>
+        </xacro:if>
+        <xacro:if value="${use_fake_hardware}">
+          <plugin>mock_components/GenericSystem</plugin>
+        </xacro:if>
+      </hardware>
+
+      <!-- <xacro:arm_ros2_control_joint
+          prefix="${prefix}"
+          name="arm_right" />
+      <xacro:arm_ros2_control_joint
+          prefix="${prefix}"
+          name="arm_left" /> -->
+
+      <xacro:wheel_ros2_control_joint
+          prefix="${prefix}" />
+
+    </ros2_control>
+  </xacro:macro>
+
+</robot>

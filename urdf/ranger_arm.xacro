@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+Software License Agreement (BSD)
+
+\file      ranger_mini_v2.urdf
+\authors   Achala Athukorala <chhathuranga@gmail.com>
+\copyright Copyright (c) 2024, Singapore University of Technology and Design
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+the following conditions are met
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the
+   following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+   following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of Clearpath Robotics nor the names of its contributors may be used to endorse or promote
+   products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WAR-
+RANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IN-
+DIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!-- Ranger Mini V2 Mobile Base -->
+<robot name="ranger_arm"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="prefix" default="" />
+  <xacro:arg name="robot_name" default="ranger_arm" />
+  <xacro:arg name="use_fake_hardware" default="false" />
+  <xacro:arg name="sim_ignition" default="true" />
+  <xacro:arg name="simulation_controllers" default="$(find libertech_ranger_arm_description)/config/ros2_controllers.yaml" />
+
+  <!-- Include Robot Components -->
+  <xacro:include filename="$(find libertech_ranger_arm_description)/urdf/common/ranger_mini_v2.xacro" />
+  <xacro:include filename="$(find libertech_ranger_arm_description)/urdf/common/arm_macro.xacro"/>
+  <xacro:include filename="$(find libertech_ranger_arm_description)/urdf/common/gripper_macro.xacro"/>
+  <xacro:include filename="$(find libertech_ranger_arm_description)/urdf/ranger_arm.ros2_control.xacro" />
+
+  <xacro:property name="mesh_visual_path" value="file://$(find libertech_ranger_arm_description)/meshes"/>
+
+  <link name="base_footprint"/>
+  <joint name="base_link_joint" type="fixed">
+    <origin xyz="0 0 0.28"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+
+  <!-- Populate robot -->
+  <xacro:ranger_mini_v2 base_link_name="base_link"/>
+  <xacro:include filename="$(find libertech_ranger_arm_description)/urdf/common/ranger_add_on.xacro" />
+
+  <xacro:load_arm prefix="" connected_to="base_add_on" left="false">
+    <origin xyz="0.23523 -0.16811 0.4925" rpy="-1.5708 0 -3.1416" />
+  </xacro:load_arm>
+
+  <xacro:load_arm prefix="" connected_to="base_add_on" left="true">
+    <origin xyz="0.23523 0.16811 0.4925" rpy="1.5708 0 -3.1416" />
+  </xacro:load_arm>
+
+  <xacro:load_gripper prefix="" connected_to="arm_right_quick_release" left="false">
+    <origin xyz="0 0 0.0015" rpy="0 0 ${PI}" />
+  </xacro:load_gripper>
+
+  <xacro:load_gripper prefix="" connected_to="arm_left_quick_release" left="true">
+    <origin xyz="0 0 0.0015" rpy="0 0 ${PI}" />
+  </xacro:load_gripper>
+
+  <xacro:ranger_arm_ros2_control prefix="$(arg prefix)" use_fake_hardware="$(arg use_fake_hardware)" sim_ignition="$(arg sim_ignition)" />
+
+  <xacro:if value="$(arg sim_ignition)">
+    <gazebo>
+      <self_collide>false</self_collide>
+      <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+        <parameters>$(arg simulation_controllers)</parameters>
+        <controller_manager_node_name>/controller_manager</controller_manager_node_name>
+      </plugin>
+      <plugin name="ignition::gazebo::systems::Sensors" filename="libignition-gazebo-sensors-system.so">
+        <render_engine>ogre2</render_engine>
+      </plugin>
+      <plugin name="ignition::gazebo::systems::ForceTorque" filename="ignition-gazebo-forcetorque-system">
+      </plugin>
+      <plugin name="ignition::gazebo::systems::Imu" filename="libignition-gazebo-imu-system.so">
+      </plugin>
+      <plugin name="ignition::gazebo::systems::OdometryPublisher" filename="ignition-gazebo-odometry-publisher-system">
+        <odom_publish_frequency>50</odom_publish_frequency>
+        <odom_topic>/odom</odom_topic>
+        <odom_frame>odom</odom_frame>
+        <dimensions>2</dimensions>
+        <robot_base_frame>base_footprint</robot_base_frame>
+        <tf_topic>/odom/tf</tf_topic>
+      </plugin>
+    </gazebo>
+
+  </xacro:if>
+
+</robot>

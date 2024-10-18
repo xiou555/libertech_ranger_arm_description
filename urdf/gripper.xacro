@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot name="gripper" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Arguments -->
+    <xacro:arg name="prefix" default="" />
+    <xacro:arg name="left" default="False" />
+
+    <xacro:include filename="$(find libertech_ranger_arm_description)/urdf/common/gripper_macro.xacro" />
+    <xacro:property name="mesh_visual_path" value="file://$(find libertech_ranger_arm_description)/meshes"/>
+
+    <link name="world"/>
+
+    <xacro:load_gripper prefix="$(arg prefix)" connected_to="world" left="$(arg left)">
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    </xacro:load_gripper>
+
+</robot>
